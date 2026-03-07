@@ -2,7 +2,7 @@
 const ContactUsForm = () => {
     return (
         <section className={"flex flex-col gap-6"}>
-            <div className={"flex gap-4"}>
+            <div className={"flex flex-col sm:flex-row gap-6 sm:gap-4"}>
                 <div className={"flex flex-col gap-2 w-full"}>
                     <label htmlFor={"firstName"} className={"text-grey-900 text-body-sm leading-body"}>First Name <span className={"text-green-600"}>*</span></label>
                     <input type={"text"} required autoComplete={"true"} name={"firstName"} aria-describedby={"firstName-instructions"} className={"rounded-lg border border-grey-500 px-6 py-3"}/>
@@ -20,7 +20,7 @@ const ContactUsForm = () => {
 
             <div className={"flex flex-col gap-2"}>
                     <legend className={"text-grey-900 text-body-sm leading-body"}>Query Type <span className={"text-green-600"}>*</span></legend>
-                    <div className={"flex gap-4"}>
+                    <div className={"flex flex-col sm:flex-row gap-4"}>
                         <div className={"w-full flex gap-3 items-center rounded-lg border border-grey-500 px-6 py-3"}>
                             <input type={"radio"} className={""} required id={"generalEnquiry"} name={"generalEnquiry"} aria-describedby={"Tick the general enquiry"}/>
                             <label htmlFor={"generalEnquiry"} className={"text-grey-900 text-body-md leading-body"}>General Enquiry</label>
