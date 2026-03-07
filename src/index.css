@@ -1,0 +1,31 @@
+@import 'tailwindcss';
+:root {
+  font-family: Karla, sans-serif;
+
+  @theme{
+    --color-grey-500: #86A2A5;
+    --color-grey-900: #2A4144;
+    --color-red-errors: #D73C3C;
+    --color-green-200: #E0F1E8;
+    --color-green-600: #0C7D69;
+
+    --text-heading: 32px;
+    --leading-heading: 100%;
+    --tracking-heading: -1px;
+
+    --text-body-md: 18px;
+    --leading-body: 150%;
+    --font-weight-body: 600;
+
+    --text-body-sm: 16px;
+
+    --spacing-100: 8px;
+    --spacing-150: 12px;
+    --spacing-200: 16px;
+    --spacing-300: 24px;
+    --spacing-400: 32px;
+    --spacing-500: 40px;
+    --spacing-1600: 128px;
+  }
+}
+
