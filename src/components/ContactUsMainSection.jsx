@@ -65,16 +65,16 @@ const ContactUsMainSection = () => {
     return (
         <>
             <form method={"post"} noValidate onSubmit={handleSubmit} className={"flex flex-col gap-10 relative"}>
-                <div aria-live={"polite"}>
+                <div id="formStatus" aria-live={"polite"} role="status" aria-atomic="true">
                     {openMessageNotification && <NotificationMessage/>}
                 </div>
                 <ContactUsForm messRes={messRes} onChange={handleChange} values={values}/>
                 <div className={"flex flex-col gap-2"}>
                     <div className={"flex items-center gap-4"}>
-                        <input id={"confirmation-info"} onChange={handleChange} checked={values.checked} type={"checkbox"} name={"checked"} required className={"accent-green-600 w-6 h-6"}/>
+                        <input id={"confirmation-info"} onChange={handleChange} checked={values.checked} type={"checkbox"} name={"checked"} required aria-describedby={"confirmation-error"} className={"accent-green-600 w-6 h-6"}/>
                         <label htmlFor={"confirmation-info"} className={"text-body-sm leading-body text-grey-900"}>I consent to being contacted by the team <span className={"text-green-600"}>*</span></label>
                     </div>
-                    <span role={"alert"} className={"text-red-errors"}>{messRes.checked}</span>
+                    <span id={"confirmation-error"} role={"alert"} className={"text-red-errors"} aria-live="assertive">{messRes.checked}</span>
                 </div>
 
                 <button type={"submit"} className={"text-white text-body-md font-body leading-body px-10 py-4 rounded-lg bg-green-600 hover:bg-[linear-gradient(#00000080,#00000080)]"}>Submit</button>
