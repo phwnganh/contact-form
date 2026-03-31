@@ -23,7 +23,7 @@ const ContactUsForm = ({messRes, onChange, values}) => {
 
             <div className={"flex flex-col gap-2"}>
                 <fieldset>
-                    <legend id={"queryType"} className={"text-grey-900 text-body-sm leading-body"}>Query Type <span className={"text-green-600"}>*</span></legend>
+                    <legend className={"text-grey-900 text-body-sm leading-body"}>Query Type <span className={"text-green-600"}>*</span></legend>
                     <div className={"flex flex-col sm:flex-row gap-4"}>
                         <div className={"w-full flex gap-3 items-center rounded-lg border border-grey-500 px-6 py-3 hover:outline-green-600 hover:outline-1 has-checked:bg-green-200"}>
                             <input id={"queryType"} onChange={onChange} checked={values.queryType === "general-inquiry"} value={"general-inquiry"} type={"radio"} className={"accent-green-600 w-6 h-6"} required name={"queryType"}/>
@@ -31,7 +31,7 @@ const ContactUsForm = ({messRes, onChange, values}) => {
                         </div>
 
                         <div className={"w-full flex gap-3 items-center rounded-lg border border-grey-500 px-6 py-3 hover:outline-green-600 hover:outline-1 has-checked:bg-green-200"}>
-                            <input onChange={onChange} checked={values.queryType === "support-request"} value={"support-request"} type={"radio"} className={"accent-green-600 w-6 h-6"} required name={"queryType"}/>
+                            <input id={"queryType"} onChange={onChange} checked={values.queryType === "support-request"} value={"support-request"} type={"radio"} className={"accent-green-600 w-6 h-6"} required name={"queryType"}/>
                             <label htmlFor={"supportRequest"} className={"text-grey-900 text-body-md leading-body"}>Support Request</label>
                         </div>
                     </div>
