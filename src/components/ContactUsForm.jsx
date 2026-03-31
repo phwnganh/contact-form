@@ -23,7 +23,7 @@ const ContactUsForm = ({messRes, onChange, values}) => {
 
             <div className={"flex flex-col gap-2"}>
                 <fieldset>
-                    <legend id={"queryType"} className={"text-grey-900 text-body-sm leading-body"}>Query Type <span className={"text-green-600"}>*</span></legend>
+                    <legend id={"queryType"} aria-describedby={"queryType-error"} className={"text-grey-900 text-body-sm leading-body"}>Query Type <span className={"text-green-600"}>*</span></legend>
                     <div className={"flex flex-col sm:flex-row gap-4"}>
                         <div className={"w-full flex gap-3 items-center rounded-lg border border-grey-500 px-6 py-3 hover:outline-green-600 hover:outline-1 has-checked:bg-green-200"}>
                             <input id={"generalEnquiry"} onChange={onChange} checked={values.queryType === "general-inquiry"} value={"general-inquiry"} type={"radio"} className={"accent-green-600 w-6 h-6"} required name={"queryType"}/>
@@ -35,14 +35,14 @@ const ContactUsForm = ({messRes, onChange, values}) => {
                             <label htmlFor={"supportRequest"} className={"text-grey-900 text-body-md leading-body"}>Support Request</label>
                         </div>
                     </div>
-                    <span id={"queryType error"} role={"alert"} className={"text-red-errors"}>{messRes.queryType}</span>
+                    <span id={"queryType-error"} role={"alert"} className={"text-red-errors"}>{messRes.queryType}</span>
                 </fieldset>
 
 
             </div>
             <div className={"flex flex-col gap-2"}>
                 <label htmlFor={"message"} className={"text-grey-900 text-body-sm leading-body"}>Message <span className={"text-green-600"}>*</span></label>
-                <textarea id={"message"} value={values.message} onChange={onChange} required autoComplete={"message"} name={"message"} aria-invalid={!!messRes.message} aria-describedby={"message-error"} rows={3} className={`text-grey-900 rounded-lg border ${messRes.message ? 'border-red-errors': 'border-grey-500'} px-6 py-3 hover:outline-green-600 hover:outline-1 focus:outline-green-600 focus:outline-1`}/>
+                <textarea id={"message"} value={values.message} onChange={onChange} required name={"message"} aria-invalid={!!messRes.message} aria-describedby={"message-error"} rows={3} className={`text-grey-900 rounded-lg border ${messRes.message ? 'border-red-errors': 'border-grey-500'} px-6 py-3 hover:outline-green-600 hover:outline-1 focus:outline-green-600 focus:outline-1`}/>
                 <span id={"message-error"} role={"alert"} className={"text-red-errors"}>{messRes.message}</span>
             </div>
         </section>
